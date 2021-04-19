@@ -1,0 +1,157 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  --bg_color: rgb(255, 255, 255);
+  --shadow_color: 4px 8px 20px rgba(0, 0, 0, 0.16);
+  --accent_color: rgb(166, 70, 204);
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(218, 218, 218);
+}
+
+.price_container {
+  display: flex;
+}
+
+.price_column {
+  margin: 1rem;
+  width: 20em;
+  /* height: 30em; */
+  padding: 0.4em 0;
+  background: var(--bg_color);
+  box-shadow: var(--shadow_color);
+  border-radius: 0.5em;
+  position: relative;
+}
+
+.price_header {
+  padding: 1em;
+  font-size: 5em;
+  font-weight: 700;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  /* background-color: aqua; */
+  /* position: absolute; */
+}
+
+.price_header .dollar,
+.slash_month {
+  font-size: 0.35em;
+}
+
+.dollar {
+  display: flex;
+  align-self: flex-start;
+}
+
+.price_header .basic {
+  flex-basis: 100%;
+  font-size: 0.35em;
+  display: flex;
+  justify-content: center;
+}
+
+.features {
+  padding: 1em;
+  display: flex;
+  /* background-color: blue; */
+  flex-direction: column;
+  justify-content: center;
+}
+
+.features .feature {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.feature svg {
+  margin: 0.2em;
+  padding: 0.1em;
+}
+
+.feature .random_text {
+  margin: 0.2em;
+  margin-left: 0.35em;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--accent_color);
+  margin: 0.5em 3em;
+  margin-bottom: 1em;
+  color: white;
+  font-weight: 600;
+  padding: 0.7em;
+  box-shadow: var(--shadow_color);
+  transform: scale(1);
+  border-radius: 0.5em;
+  transition: transform 0.2s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.center_col {
+  background: var(--accent_color);
+  color: var(--bg_color);
+  transform: scale(1.15);
+}
+
+.center_col .button {
+  background-color: var(--bg_color);
+  color: #000;
+}
+
+.right_col {
+  box-shadow: var(--shadow_color);
+}
+
+.center_col .features .feature:last-child,
+.center_col .features .feature:last-child svg {
+  text-decoration: line-through;
+  color: rgb(221, 221, 221);
+  stroke: rgb(221, 221, 221);
+}
+
+.left_col .features .feature:last-child,
+.left_col .features .feature:nth-last-child(2),
+.left_col .features .feature:last-child svg,
+.left_col .features .feature:nth-last-child(2) svg {
+  text-decoration: line-through;
+  color: rgb(221, 221, 221);
+  stroke: rgb(221, 221, 221);
+}
+
+.center_col .price_header::before {
+  content: 'popular';
+  font-size: 0.2em;
+  background: rgb(255, 215, 37);
+  color: #000;
+  top: 0;
+  right: 0;
+  margin: 0.5em;
+  padding: 0.3em 0.4em;
+  border-radius: 0.3em;
+  position: absolute;
+}
